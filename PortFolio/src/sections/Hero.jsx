@@ -1,47 +1,33 @@
 import { Canvas } from "@react-three/fiber"
 import Something from "../components/Something"
-import { Suspense } from "react"
+import { Suspense, useRef, useEffect } from "react"
 import CanvasLoader from "../components/CanvasLoader"
-import { Leva, useControls } from "leva"
+import { useMediaQuery } from "react-responsive"
+import { calculateSizes } from "../constants"
+import ReactLogo from "../components/ReactLogo"
+import Cube from "../components/Cube"
+import gsap from 'gsap';
 
 const Hero = () => {
-    const { scale,positionX,positionY,positionZ,rotationX,rotationY ,rotationZ } = useControls("Something", {
-        scale: {
-            value: 0,
-            min: 0.1,
-            max: 10,
-        },
-        positionX: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        positionY: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        positionZ: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        rotationX: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        rotationY: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        rotationZ: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-    });
+    
+    const isSmall = useMediaQuery({ maxWidth: 440 });
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+    const sizes = calculateSizes(isSmall, isMobile, isTablet);
+
+    const groupRef = useRef();
+
+  useEffect(() => {
+    if (groupRef.current) {
+      gsap.to(groupRef.current.rotation, {
+        y: "+=6.28319", 
+        duration: 7,    
+        repeat: -1,     
+        ease: "none",   
+      });
+    }
+  }, []);
 
   return (
     <section className="min-h-screen w-full flex flex-col relative">
@@ -51,17 +37,26 @@ const Hero = () => {
         </div>
 
         <div className="w-full h-full absolute inset-0">
-            <Leva/>
             <Canvas className="w-full h-full">
                 <Suspense fallback={<CanvasLoader/>}>
-                <perspectiveCamera makeDefault position={[0,0,30]}/>
-                <Something 
-                    // scale = {0.6}  
-                    position = {[positionX,positionY,positionZ]} 
-                    rotation = {[rotationX,rotationY ,rotationZ]}
-                    scale ={[scale,scale,scale]}
+                <perspectiveCamera makeDefault position = {[0,0,30]} />
+
+                <Something  
+                    ref={groupRef}
+                    scale ={sizes.deskScale}
+                    position = {sizes.deskPosition} 
+                    rotation = {[0,-Math.PI ,0]}
                     />
                     
+                    <group>
+                        <ReactLogo 
+                        scale = {sizes.reactScale}
+                        position = {sizes.reactLogoPosition}/>
+                        <Cube 
+                        scale={sizes.cubeScale} 
+                        position={sizes.cubePosition}/>
+                    </group>
+
                     <ambientLight intensity={1.5}/>
                     <directionalLight position={[10,10,100]} intensity={1}/>
                 </Suspense>
