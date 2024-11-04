@@ -5,49 +5,39 @@ import CanvasLoader from "../components/CanvasLoader"
 import { Leva, useControls } from "leva"
 
 const Hero = () => {
-    const { scaleX, scaleY, scaleZ,positionX,positionY,positionZ,rotationX,rotationY ,rotationZ } = useControls("Something", {
-        scaleX: {
-            value: 2.5,
-            min: -10,
-            max: 10,
-        },
-        scaleY: {
-            value: 2.5,
-            min: -10,
-            max: 10,
-        },
-        scaleZ: {
-            value: 2.5,
-            min: -10,
+    const { scale,positionX,positionY,positionZ,rotationX,rotationY ,rotationZ } = useControls("Something", {
+        scale: {
+            value: 0,
+            min: 0.1,
             max: 10,
         },
         positionX: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
         positionY: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
         positionZ: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
         rotationX: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
         rotationY: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
         rotationZ: {
-            value: 2.5,
+            value: 0,
             min: -10,
             max: 10,
         },
@@ -69,11 +59,11 @@ const Hero = () => {
                     // scale = {0.6}  
                     position = {[positionX,positionY,positionZ]} 
                     rotation = {[rotationX,rotationY ,rotationZ]}
-                    scale ={[scaleX,scaleY,scaleZ]}
+                    scale ={[scale,scale,scale]}
                     />
                     
-                    <ambientLight intensity={1}/>
-                    <directionalLight position={[10,10,10]} intensity={0.5}/>
+                    <ambientLight intensity={1.5}/>
+                    <directionalLight position={[10,10,100]} intensity={1}/>
                 </Suspense>
             </Canvas>
         </div>
