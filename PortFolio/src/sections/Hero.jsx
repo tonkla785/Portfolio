@@ -7,6 +7,7 @@ import { calculateSizes } from "../constants"
 import ReactLogo from "../components/ReactLogo"
 import Cube from "../components/Cube"
 import gsap from 'gsap';
+import Button from "../components/Button"
 
 const Hero = () => {
     
@@ -60,7 +61,12 @@ const Hero = () => {
                     <ambientLight intensity={1.5}/>
                     <directionalLight position={[10,10,100]} intensity={1}/>
                 </Suspense>
-            </Canvas>
+            </Canvas> 
+        </div>
+        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+          <a href="#contact" classname="w-fit">
+            <Button name="Let's go if you want to work with me" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+          </a>
         </div>
     </section>
   )
