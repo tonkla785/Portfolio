@@ -14,25 +14,8 @@ body {
 }
 
 @layer utilities {
-
-  @keyframes randomMove {
-    0%, 100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    25% {
-      transform: translate(calc(-50% + 10px), calc(-50% + 10px)) scale(1.05);
-    }
-    50% {
-      transform: translate(calc(-50% - 15px), calc(-50% - 15px)) scale(0.95);
-    }
-    75% {
-      transform: translate(calc(-50% + 5px), calc(-50% - 10px)) scale(1.1);
-    }
-  }
-
   .hero-ring{
     @apply absolute inset-0  border-2 mt-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-violet-500/5 shadow-[0_0_80px_inset] shadow-violet-500/5;
-    animation: randomMove 3s infinite ease-in-out;
   }
 
   .c-space {
@@ -69,11 +52,11 @@ body {
   }
 
   .btn-ping {
-    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-500 opacity-75;
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75;
   }
 
   .btn-ping_dot {
-    @apply relative inline-flex rounded-full h-3 w-3 bg-violet-600;
+    @apply relative inline-flex rounded-full h-3 w-3 bg-green-600;
   }
 
   /* hero section */
@@ -290,4 +273,35 @@ body {
 
 .fade-in-grow {
   animation: fade-in-grow 0.7s ease-out forwards;
+}
+
+@keyframes randomMove {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(calc(-50% + 10px), calc(-50% + 10px)) scale(1.05);
+  }
+  50% {
+    transform: translate(calc(-50% - 15px), calc(-50% - 15px)) scale(0.95);
+  }
+  75% {
+    transform: translate(calc(-50% + 5px), calc(-50% - 10px)) scale(1.1);
+  }
+}
+
+.random-move{
+  animation: randomMove 3s infinite ease-in-out;
+}
+
+.random1-move{
+  animation: randomMove 4s infinite ease-in-out;
+}
+
+.random2-move{
+  animation: randomMove 5s infinite ease-in-out;
+}
+
+.random3-move{
+  animation: randomMove 6s infinite ease-in-out;
 }
