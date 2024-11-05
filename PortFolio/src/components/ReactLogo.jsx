@@ -8,7 +8,7 @@ const ReactLogo = (props) => {
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01; // หมุนในแกน Y
+      groupRef.current.rotation.y += 0.015; // หมุนในแกน Y
     }
   });
 

@@ -9,6 +9,7 @@ import Cube from "../components/Cube"
 import gsap from 'gsap';
 import Button from "../components/Button"
 
+
 const Hero = () => {
     
     const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -32,12 +33,18 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen w-full flex flex-col relative">
-        <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+      <div className="size-[620px] hero-ring"></div>
+      <div className="size-[820px] hero-ring"></div>
+      <div className="size-[1020px] hero-ring"></div>
+      <div className="size-[1220px] hero-ring"></div>
+      <div className="size-[1420px] hero-ring"></div>
+      <div className="size-[1620px] hero-ring"></div>
+        <div className="transition-all duration-500 slide-in-top ease-in-out w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
             <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans"> Hi, I am Ton-kla <span className="waving-hand">🍀</span></p>
             <p className="hero_tag text-gray_gradient text-center">Font-end Developer & Iot Developer</p>
         </div>
 
-        <div className="w-full h-full absolute inset-0">
+        <div className="transition-all duration-800 slide-in-top ease-in-out w-full h-full absolute inset-0">
             <Canvas className="w-full h-full">
                 <Suspense fallback={<CanvasLoader/>}>
                 <perspectiveCamera makeDefault position = {[0,0,30]} />
@@ -63,7 +70,7 @@ const Hero = () => {
                 </Suspense>
             </Canvas> 
         </div>
-        <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <div className="transition-all duration-900 slide-in-bottom ease-in-out absolute bottom-7 left-0 right-0 w-full z-10 c-space">
           <a href="#contact" classname="w-fit">
             <Button name="Let's go if you want to work with me" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
           </a>
