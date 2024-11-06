@@ -2,6 +2,7 @@ import Hero from './sections/Hero'
 import Navbar from './sections/Navbar'
 import About from './sections/About'
 import { useEffect } from 'react'
+import Work from './sections/Work'
 
 const App = () => {
   useEffect(()=>{
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <About/>
+      <Work/>
     </main>
   )
 }
