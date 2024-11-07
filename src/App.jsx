@@ -1,8 +1,9 @@
-import Hero from './sections/Hero'
-import Navbar from './sections/Navbar'
-import About from './sections/About'
+import Hero from './sections/Hero.jsx'
+import Navbar from './sections/Navbar.jsx'
+import About from './sections/About.jsx'
 import { useEffect } from 'react'
-import Work from './sections/Work'
+import Work from './sections/Work.jsx'
+import Contact from './sections/Contact.jsx'
 
 const App = () => {
   useEffect(()=>{
@@ -14,6 +15,7 @@ const App = () => {
       <Hero/>
       <About/>
       <Work/>
+      <Contact/>
     </main>
   )
 }

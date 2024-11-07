@@ -27,7 +27,7 @@ const About = () => {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Trigger when 10% of the section is visible
+        threshold: 0.1,
       }
     );
 
@@ -43,8 +43,8 @@ const About = () => {
   }, []);
 
   return (
-    <section className='c-space my-20' ref={sectionRef}>
-      <div className={`transition-all duration-800 ${isVisible ? 'slide-in-left' : 'opacity-0'} ease-in-out grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full`}>
+    <section className='c-space my-20' ref={sectionRef} id='about'>
+      <div className={`transition-all duration-800 ${isVisible ? 'slide-in-left' : 'opacity-0'} grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full`}>
 
         <div className='col-span-1 xl:row-span-3'>
           <div className='grid-container'>

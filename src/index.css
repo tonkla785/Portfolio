@@ -92,7 +92,10 @@ body {
   /* projects section  */
   .arrow-btn {
     @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+    pointer-events: all;
+    z-index: 10;
   }
+  
 
   .tech-logo {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
@@ -208,6 +211,21 @@ body {
   }
 }
 
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.8s ease-in-out forwards;
+}
+
 @keyframes slide-in-left {
   from {
     transform: translateX(-100%);
@@ -220,7 +238,7 @@ body {
 }
 
 .slide-in-left {
-  animation: slide-in-left 0.8s forwards;
+  animation: slide-in-left 0.8s ease-in-out forwards;
 }
 
 @keyframes slide-in-top {
