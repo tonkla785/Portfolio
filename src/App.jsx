@@ -10,7 +10,7 @@ const App = () => {
     document.title = `Portfolio`
   })
   return (
-    <main className='max-w-7xl mx-auto'>
+    <main className='max-w-7xl mx-auto min-h-screen flex flex-col items-center'>
       <Navbar/>
       <Hero/>
       <About/>
