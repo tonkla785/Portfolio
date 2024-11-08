@@ -44,6 +44,7 @@ const About = () => {
 
   return (
     <section className='c-space my-20' ref={sectionRef} id='about'>
+      <br/><br/><br/><br/>
       <div className={`transition-all duration-800 ${isVisible ? 'slide-in-left' : 'opacity-0'} grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full`}>
 
         <div className='col-span-1 xl:row-span-3'>

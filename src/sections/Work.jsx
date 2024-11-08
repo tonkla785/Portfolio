@@ -55,7 +55,8 @@ const Work = () => {
   
   return (
     <section className='c-space my-20'  ref={sectionRef} id='work'>
-      <div className={`transition-all duration-800 ${isVisible ? 'slide-in-right' : 'opacity-0'} ease-in-out`}>
+      <div className={`transition-all duration-800 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
+        <br/><br/><br/><br/><br/><br/>
         <p className='head-text'>My Work</p>
 
         <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full '>
@@ -80,9 +81,9 @@ const Work = () => {
                     <p>Check GitHub</p>
                     <img src='/assets/arrow-up.png' className='w-3 h-3' alt='arrow' />
                   </a>
-                </div>
+                </div><br/>
 
-                <div className="flex justify-between items-center mt-7">
+                <div className="flex justify-between items-center absolute bottom-5 left-0 right-0 px-5">
                   <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
                     <img src="/assets/left-arrow.png" alt="left arrow" />
                   </button>
